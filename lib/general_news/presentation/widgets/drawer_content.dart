@@ -2,26 +2,37 @@ import 'package:flutter/material.dart';
 import '../../../constants/theme.dart';
 
 class DrawerContent extends StatelessWidget {
-  final IconData icon;
+  final String image;
   final String title;
-  const DrawerContent({Key? key, required this.icon, required this.title})
+  final void Function()? onTap;
+  const DrawerContent({Key? key, required this.image, required this.title, this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 50),
-        child: Row(
-          children: [
-            Icon(icon),
-            SizedBox(width: 15),
-            Expanded(
-              child: Text(
-                title,
-                style: AppTextStyles.headingMediumTextBlack,
+        padding: const EdgeInsets.only(top: 40),
+        child: GestureDetector(
+          onTap: onTap,
+          child: Row(
+            children: [
+              Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: appTheme.primaryColor),
+                  child: Image.asset(
+                    image,
+                    scale: 2,
+                  )),
+              SizedBox(width: 15),
+              Expanded(
+                child: Text(
+                  title,
+                  style: AppTextStyles.headingMedium2TextBlack,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ));
   }
 }

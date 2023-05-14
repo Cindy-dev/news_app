@@ -8,14 +8,19 @@ import 'package:news_app/general_news/data/model/general_news_model.dart';
 class GeneralNewsService {
   final dio = Dio();
   Future<GeneralNewsModel> fetchNews() async {
-    final url =
-        "https://newsapi.org/v2/everything?q=general&apiKey=${dotenv.env["apiKey"]}";
+    // final url =
+    //     "https://newsapi.org/v2/everything?q=general&apiKey=${dotenv.env["apiKey"]}";
     try {
-      final response = await dio.get(url);
+      ///check url
+      final response = await dio.get("");
       final generalNews = GeneralNewsModel.fromJson(response.data);
       return generalNews;
-    }on SocketException{
+    } on SocketException {
       throw Exception("please Connect to the internet");
+      // }on DioError {
+      //   if(statusCode == 429){
+      //     throw Exception("Timeout Exception : Please try again later");
+      //   }
     } catch (e) {
       print(e);
       throw e;

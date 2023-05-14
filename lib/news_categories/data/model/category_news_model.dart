@@ -1,38 +1,29 @@
-// To parse this JSON data, do
-//
-//     final cryptoNewsModel = cryptoNewsModelFromJson(jsonString);
-
-///
 // https://newsapi.org/v2/everything?q=health&apiKey=76666343a8b643979f037b74a2c804b4
 //https://newsapi.org/v2/everything?q=bitcoin&apiKey=76666343a8b643979f037b74a2c804b4
-import 'dart:convert';
-
-CryptoNewsModel cryptoNewsModelFromJson(String str) => CryptoNewsModel.fromJson(json.decode(str));
-
-String cryptoNewsModelToJson(CryptoNewsModel data) => json.encode(data.toJson());
-
-class CryptoNewsModel {
+//https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=76666343a8b643979f037b74a2c804b4
+class CategoryNewsModel {
   String status;
   int totalResults;
   List<Article> articles;
 
-  CryptoNewsModel({
+  CategoryNewsModel({
     required this.status,
     required this.totalResults,
     required this.articles,
   });
 
-  factory CryptoNewsModel.fromJson(Map<String, dynamic> json) => CryptoNewsModel(
-    status: json["status"],
-    totalResults: json["totalResults"],
-    articles: List<Article>.from(json["articles"].map((x) => Article.fromJson(x))),
-  );
-
+  factory CategoryNewsModel.fromJson(Map<String, dynamic> json) =>
+      CategoryNewsModel(
+        status: json["status"],
+        totalResults: json["totalResults"],
+        articles: List<Article>.from(
+            json["articles"].map((x) => Article.fromJson(x))),
+      );
   Map<String, dynamic> toJson() => {
-    "status": status,
-    "totalResults": totalResults,
-    "articles": List<dynamic>.from(articles.map((x) => x.toJson())),
-  };
+        "status": status,
+        "totalResults": totalResults,
+        "articles": List<dynamic>.from(articles.map((x) => x.toJson())),
+      };
 }
 
 class Article {
@@ -57,26 +48,26 @@ class Article {
   });
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
-    source: Source.fromJson(json["source"]),
-    author: json["author"],
-    title: json["title"],
-    description: json["description"],
-    url: json["url"],
-    urlToImage: json["urlToImage"],
-    publishedAt: DateTime.parse(json["publishedAt"]),
-    content: json["content"],
-  );
+        source: Source.fromJson(json["source"]),
+        author: json["author"],
+        title: json["title"],
+        description: json["description"],
+        url: json["url"],
+        urlToImage: json["urlToImage"],
+        publishedAt: DateTime.parse(json["publishedAt"]),
+        content: json["content"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "source": source.toJson(),
-    "author": author,
-    "title": title,
-    "description": description,
-    "url": url,
-    "urlToImage": urlToImage,
-    "publishedAt": publishedAt.toIso8601String(),
-    "content": content,
-  };
+        "source": source.toJson(),
+        "author": author,
+        "title": title,
+        "description": description,
+        "url": url,
+        "urlToImage": urlToImage,
+        "publishedAt": publishedAt.toIso8601String(),
+        "content": content,
+      };
 }
 
 class Source {
@@ -89,17 +80,25 @@ class Source {
   });
 
   factory Source.fromJson(Map<String, dynamic> json) => Source(
-    id: idValues.map[json["id"]]!,
-    name: json["name"],
-  );
+        id: idValues.map[json["id"]]!,
+        name: json["name"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": idValues.reverse[id],
-    "name": name,
-  };
+        "id": idValues.reverse[id],
+        "name": name,
+      };
 }
 
-enum Id { ENGADGET, GOOGLE_NEWS, THE_VERGE, BUSINESS_INSIDER, WIRED, BBC_NEWS, ABC_NEWS }
+enum Id {
+  ENGADGET,
+  GOOGLE_NEWS,
+  THE_VERGE,
+  BUSINESS_INSIDER,
+  WIRED,
+  BBC_NEWS,
+  ABC_NEWS
+}
 
 final idValues = EnumValues({
   "abc-news": Id.ABC_NEWS,

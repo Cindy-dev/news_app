@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   shimmer: ^2.0.0
+  intl: ^0.18.1
   url_launcher: ^6.1.11
   build_runner: ^2.3.3 #used to generate codes for state management
   freezed: ^2.3.2 #code generation package
