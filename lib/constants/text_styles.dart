@@ -22,6 +22,13 @@ class AppTextStyles {
     color: _Colors.primaryColorDark,
   );
 
+  static const headingMedium2TextBlack = TextStyle(
+    fontSize: 19,
+    fontWeight: FontWeight.w700,
+    fontFamily: AppFont.interBold,
+    color: _Colors.primaryColorDark,
+  );
+
   static const subtitle1 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,

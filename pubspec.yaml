@@ -11,13 +11,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shimmer: ^2.0.0
+  url_launcher: ^6.1.11
   build_runner: ^2.3.3 #used to generate codes for state management
   freezed: ^2.3.2 #code generation package
   hooks_riverpod: ^2.3.4 #state management package
   flutter_riverpod: ^2.3.4 #state management package
   logger: ^1.3.0 #retrieving log reports
   flutter_dotenv: ^5.0.2 #used for storing api endpoints and keys
-  dio: ^5.1.1 #used to make individual HTTP requests
+  dio: ^5.1.2 #used to make individual HTTP requests
 
   cupertino_icons: ^1.0.2
 

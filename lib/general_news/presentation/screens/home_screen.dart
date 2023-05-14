@@ -12,23 +12,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _scaffoldKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
       drawer: AppDrawer(),
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               GestureDetector(
-                  onTap: (){},
-                  child: Image.asset("assets/images/menu.png", scale: 1.5,)),
+                  onTap: () => _scaffoldKey.currentState?.openDrawer(),
+                  child: Image.asset(
+                    "assets/images/menu.png",
+                    scale: 1.5,
+                  )),
               SizedBox(height: 25),
-              Text("Find the Latest\nUpdates",
+              Text("Find the Latest\nNews Updates",
                   style: AppTextStyles.displayLargeDarkBlack),
               TopHeadlineCard(),
               SizedBox(height: 30),
