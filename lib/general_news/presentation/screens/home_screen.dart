@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/theme.dart';
 import 'package:news_app/general_news/presentation/widgets/app_drawer.dart';
-import 'package:news_app/general_news/presentation/widgets/latest_news.dart';
+import 'package:news_app/general_news/presentation/widgets/general_news.dart';
 import 'package:news_app/top_headlines/presentation/widgets/top_headline_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: AppTextStyles.displayLargeDarkBlack),
               TopHeadlineCard(),
               SizedBox(height: 30),
-              LatestNews(),
+              GeneralNews(),
             ],
           ),
         ),

@@ -14,6 +14,7 @@ dependencies:
   shimmer: ^2.0.0
   intl: ^0.18.1
   url_launcher: ^6.1.11
+  lottie: ^2.3.2
   build_runner: ^2.3.3 #used to generate codes for state management
   freezed: ^2.3.2 #code generation package
   hooks_riverpod: ^2.3.4 #state management package
@@ -38,6 +39,8 @@ flutter:
   assets:
      - .env
      - assets/images/
+     - assets/images/screenshot/
+     - assets/json/
   #   - images/a_dot_ham.jpeg
 
   fonts:

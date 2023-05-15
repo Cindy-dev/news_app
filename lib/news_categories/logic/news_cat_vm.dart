@@ -1,15 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:news_app/news_categories/data/model/category_news_model.dart';
 import 'package:news_app/news_categories/data/repository/category_services.dart';
-import 'package:news_app/top_headlines/data/repository/top_headline_service.dart';
 import '../../app_controllers/controllers/request_view_model.dart';
+import '../../model/news_model.dart';
 
 class NewsCatVM extends RequestStateNotifier<void> {
   final Ref ref;
   NewsCatVM(this.ref);
 
   ///health
-  Future<CategoryNewsModel> fetchHealthNews(String country) async {
+  Future<NewsModel> fetchHealthNews(String country) async {
     final healthNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "health");
@@ -17,7 +16,7 @@ class NewsCatVM extends RequestStateNotifier<void> {
   }
 
   ///sports
-  Future<CategoryNewsModel> fetchSportsNews(String country) async {
+  Future<NewsModel> fetchSportsNews(String country) async {
     final sportsNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "sports");
@@ -25,7 +24,7 @@ class NewsCatVM extends RequestStateNotifier<void> {
   }
 
   ///bitcoin
-  Future<CategoryNewsModel> fetchBitcoinNews(String country) async {
+  Future<NewsModel> fetchBitcoinNews(String country) async {
     final bitcoinNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "bitcoin");
@@ -33,7 +32,7 @@ class NewsCatVM extends RequestStateNotifier<void> {
   }
 
   ///science
-  Future<CategoryNewsModel> fetchScienceNews(String country) async {
+  Future<NewsModel> fetchScienceNews(String country) async {
     final scienceNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "science");
@@ -41,7 +40,7 @@ class NewsCatVM extends RequestStateNotifier<void> {
   }
 
   ///business
-  Future<CategoryNewsModel> fetchBusinessNews(String country) async {
+  Future<NewsModel> fetchBusinessNews(String country) async {
     final businessNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "business");
@@ -49,7 +48,7 @@ class NewsCatVM extends RequestStateNotifier<void> {
   }
 
   ///technology
-  Future<CategoryNewsModel> fetchTechnologyNews(String country) async {
+  Future<NewsModel> fetchTechnologyNews(String country) async {
     final technologyNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "technology");
@@ -57,7 +56,7 @@ class NewsCatVM extends RequestStateNotifier<void> {
   }
 
   ///entertainment
-  Future<CategoryNewsModel> fetchEntertainmentNews(String country) async {
+  Future<NewsModel> fetchEntertainmentNews(String country) async {
     final entertainmentNews = await ref
         .read(newsCatServiceProvider)
         .fetchNewsCategory(country, "entertainment");

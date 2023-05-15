@@ -40,36 +40,43 @@ class _AppDrawerState extends State<AppDrawer> {
                   shrinkWrap: true,
                   children: [
                     DrawerContent(
+                      tag: "health",
                         onTap: () => Navigator.pushNamed(
                             context, AppRoute.healthCatScreen),
                         image: "assets/images/hospital.png",
                         title: "Health"),
                     DrawerContent(
+                        tag: "sports",
                         onTap: () => Navigator.pushNamed(
                             context, AppRoute.sportsCatScreen),
                         image: "assets/images/discover.png",
                         title: "Sports"),
                     DrawerContent(
+                        tag: "bitcoin",
                         onTap: () => Navigator.pushNamed(
                             context, AppRoute.bitcoinCatScreen),
                         image: "assets/images/bitcoin.png",
                         title: "Bitcoin"),
                     DrawerContent(
+                        tag: "science",
                         onTap: () => Navigator.pushNamed(
                             context, AppRoute.scienceCatScreen),
                         image: "assets/images/glass.png",
                         title: "Science"),
                     DrawerContent(
+                        tag: "business",
                         onTap: () => Navigator.pushNamed(
-                            context, AppRoute.bitcoinCatScreen),
+                            context, AppRoute.businessCatScreen),
                         image: "assets/images/trend.png",
                         title: "Business"),
                     DrawerContent(
+                      tag: "tech",
                         onTap: () => Navigator.pushNamed(
                             context, AppRoute.techCatScreen),
                         image: "assets/images/code.png",
                         title: "Technology"),
                     DrawerContent(
+                        tag: "entertainment",
                         onTap: () => Navigator.pushNamed(
                             context, AppRoute.enterCatScreen),
                         image: "assets/images/musicnote.png",

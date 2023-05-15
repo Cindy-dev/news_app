@@ -1,25 +1,17 @@
-
 import 'dart:convert';
 
-GeneralNewsModel generalNewsModelFromJson(String str) =>
-    GeneralNewsModel.fromJson(json.decode(str));
-
-String generalNewsModelToJson(GeneralNewsModel data) =>
-    json.encode(data.toJson());
-
-class GeneralNewsModel {
+class NewsModel {
   String? status;
   int? totalResults;
   List<Article>? articles;
 
-  GeneralNewsModel({
+  NewsModel({
     required this.status,
     required this.totalResults,
     required this.articles,
   });
 
-  factory GeneralNewsModel.fromJson(Map<String, dynamic> json) =>
-      GeneralNewsModel(
+  factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
         status: json["status"],
         totalResults: json["totalResults"],
         articles: List<Article>.from(

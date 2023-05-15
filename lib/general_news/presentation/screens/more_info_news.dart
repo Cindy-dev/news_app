@@ -32,10 +32,9 @@ class MoreInfoNews extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 10),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               GestureDetector(
                   onTap: () => Navigator.pop(context),
                   child: Icon(Icons.arrow_back_ios)),
@@ -49,57 +48,81 @@ class MoreInfoNews extends StatelessWidget {
               ),
               SizedBox(height: 35),
               Text(
-                desc ?? "",
+                "Description:",
                 style: AppTextStyles.headingMedium2TextBlack,
               ),
+              SizedBox(height: 5),
+              Text(
+                desc ?? "",
+                textAlign: TextAlign.justify,
+                style: AppTextStyles.body2Medium,
+              ),
               SizedBox(height: 35),
-              Text(
-                "Read News",
-                style: AppTextStyles.headingMediumTextBlack,
-              ),
-              image == null
-                  ? Container(
-                      margin: EdgeInsets.only(top: 30, bottom: 20),
-                      alignment: Alignment.center,
-                      width: context.deviceWidth() / 1.2,
-                      height: context.deviceHeight() / 3,
-                      child: Text(
-                        "Image Preview Unavailable",
-                        style: AppTextStyles.body2MediumWhite,
-                      ),
-                      decoration: BoxDecoration(
-                          color: appTheme.primaryColor,
-                          borderRadius: BorderRadius.circular(20)),
-                    )
-                  : Container(
-                      margin: EdgeInsets.only(top: 30, bottom: 20),
-                      width: context.deviceWidth() / 1.2,
-                      height: context.deviceHeight() / 3,
-                      decoration: BoxDecoration(
-                          color: appTheme.primaryColorDark,
-                          image: DecorationImage(
-                            image: NetworkImage(image!),
-                            fit: BoxFit.cover,
+              Expanded(
+                  child: ListView(
+                shrinkWrap: true,
+                children: [
+                  Text(
+                    "Read News",
+                    style: AppTextStyles.headingMediumTextBlack,
+                  ),
+                  image == null
+                      ? Container(
+                          margin: EdgeInsets.only(top: 30, bottom: 20),
+                          alignment: Alignment.center,
+                          width: context.deviceWidth() / 1.2,
+                          height: context.deviceHeight() / 3,
+                          child: Text(
+                            "Image Preview Unavailable",
+                            style: AppTextStyles.body2MediumWhite,
                           ),
-                          borderRadius: BorderRadius.circular(20)),
+                          decoration: BoxDecoration(
+                              color: appTheme.primaryColor,
+                              borderRadius: BorderRadius.circular(20)),
+                        )
+                      : Container(
+                          margin: EdgeInsets.only(top: 30, bottom: 20),
+                          width: context.deviceWidth() / 1.2,
+                          height: context.deviceHeight() / 3,
+                          decoration: BoxDecoration(
+                              color: appTheme.primaryColorDark,
+                              image: DecorationImage(
+                                image: NetworkImage(image!),
+                                fit: BoxFit.cover,
+                              ),
+                              borderRadius: BorderRadius.circular(20)),
+                        ),
+                  Text(
+                    content ?? "",
+                    textAlign: TextAlign.justify,
+                    style: AppTextStyles.body2Regular,
+                  ),
+                  TextButton(
+                    onPressed: () => _launchURL(sourceUrl),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Got to Source Link",
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w800,
+                              fontFamily: "Inter")),
                     ),
-              Text(
-                content ?? "",
-                style: AppTextStyles.body2Regular,
-              ),
-              TextButton(
-                onPressed: () => canLaunchUrl(
-                  Uri.parse(sourceUrl!),
-                ),
-                child: Text(
-                  "Got to Source Link",
-                  style: AppTextStyles.body2Regular,
-                ),
-              ),
-            ],
-          ),
-        ),
+                  )
+                ],
+              )),
+            ])),
       ),
     );
+  }
+
+// Function to launch the URL
+  void _launchURL(String? url) async {
+    if (url != null) {
+      final uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri);
+      }
+    }
   }
 }

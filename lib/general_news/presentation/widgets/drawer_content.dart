@@ -4,8 +4,14 @@ import '../../../constants/theme.dart';
 class DrawerContent extends StatelessWidget {
   final String image;
   final String title;
+  final Object? tag;
   final void Function()? onTap;
-  const DrawerContent({Key? key, required this.image, required this.title, this.onTap})
+  const DrawerContent(
+      {Key? key,
+      required this.image,
+      required this.title,
+      this.onTap,
+      this.tag})
       : super(key: key);
 
   @override
@@ -26,9 +32,13 @@ class DrawerContent extends StatelessWidget {
                   )),
               SizedBox(width: 15),
               Expanded(
-                child: Text(
-                  title,
-                  style: AppTextStyles.headingMedium2TextBlack,
+                child: Hero(
+                  tag: tag ?? "",
+                  child: Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    //AppTextStyles.headingMedium2TextBlack,
+                  ),
                 ),
               ),
             ],

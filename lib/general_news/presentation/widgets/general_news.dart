@@ -8,8 +8,8 @@ import 'package:news_app/general_news/presentation/utils/box_shimmer.dart';
 import '../../../constants/theme.dart';
 import '../screens/more_info_news.dart';
 
-class LatestNews extends ConsumerWidget {
-  const LatestNews({Key? key}) : super(key: key);
+class GeneralNews extends ConsumerWidget {
+  const GeneralNews({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -21,7 +21,7 @@ class LatestNews extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Latest News", style: AppTextStyles.headingMediumTextBlack),
+              Text("General News", style: AppTextStyles.headingMediumTextBlack),
               IconButton(
                   onPressed: () => ref.refresh(generalNewsVM.future),
                   icon: Icon(Icons.refresh))

@@ -8,14 +8,14 @@ import 'package:news_app/top_headlines/logic/top_headline_vm.dart';
 import '../../../constants/theme.dart';
 import '../../../general_news/presentation/screens/more_info_news.dart';
 
-class TopHeadlineCard extends StatefulHookConsumerWidget {
+class TopHeadlineCard extends StatefulWidget {
   const TopHeadlineCard({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<TopHeadlineCard> createState() => _TopHeadlineCardState();
+  State<TopHeadlineCard> createState() => _TopHeadlineCardState();
 }
 
-class _TopHeadlineCardState extends ConsumerState<TopHeadlineCard> {
+class _TopHeadlineCardState extends State<TopHeadlineCard> {
   String selectedCountry = "ng";
 
   void _onCountrySelected(String countryName) {
