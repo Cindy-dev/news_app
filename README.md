@@ -20,12 +20,9 @@ A news app built with flutter and news api endpoint.
 
 
 <p align="center">
-    <img src="assets\images\screenshot\s1.png" width="400">
-    <img src="assets\images\screenshot\s2.png" width="400"> 
-    <img src="assets\images\screenshot\s3.png" width="400">
-    <img src="assets\images\screenshot\s4.png" width="400">
-    <img src="assets\images\screenshot\s5.png" width="400">
-    <img src="assets\images\screenshot\s6.png" width="400">
+    <img src="assets\images\screenshot\sc.gif" width="400">
+    <img src="assets\images\screenshot\s1.gif" width="400"> 
+    <img src="assets\images\screenshot\s2.gif" width="400">
    </p>
 
 ## WATCH VIDEO
