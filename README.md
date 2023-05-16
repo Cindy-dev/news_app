@@ -1,16 +1,37 @@
-# news_app
+A news app built with flutter and news api endpoint.
 
-A new Flutter project.
+## ✨ Features
 
-## Getting Started
+- [x] View/Read Top Headlines in most recent article order.
+- [x] View/Read General News in most recent article order.
+- [x] View/Read News in multiple categories in most recent article order.
+- [x] View /Read News from a list of country.
+- [x] Open Source link to news
+- [x] View/Read News details.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🔌 Plugins
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Name                                                                  | Usage                                               |
+| --------------------------------------------------------------------- | --------------------------------------------------- |
+| [**Flutter Riverpod**](https://pub.dev/packages/flutter_riverpod)     | State Management
+| [News Api](https://newsapi.org/)                                      | News Api
+
+
+<p align="center">
+    <img src="assets\images\screenshot\s1.png" width="400">
+    <img src="assets\images\screenshot\s2.png" width="400"> 
+    <img src="assets\images\screenshot\s3.png" width="400">
+    <img src="assets\images\screenshot\s4.png" width="400">
+    <img src="assets\images\screenshot\s5.png" width="400">
+    <img src="assets\images\screenshot\s6.png" width="400">
+   </p>
+
+## WATCH VIDEO
+<a href= 'https://drive.google.com/file/d/1GzGH-j8JhMFzTm1nGx1Ud8ja272hoNje/view?usp=sharing'> Click to download </a>
+
+## 🤓 Author(s)
+**Cindy dev**
+[Twitter Follow] <a href= "https://twitter.com/cindyDev_"> Click to follow </a>
+
