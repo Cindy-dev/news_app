@@ -29,7 +29,7 @@ A news app built with flutter and news api endpoint.
    </p>
 
 ## WATCH VIDEO
-<a href= 'https://drive.google.com/file/d/1GzGH-j8JhMFzTm1nGx1Ud8ja272hoNje/view?usp=sharing'> Click to download </a>
+<a href= 'https://drive.google.com/file/d/1snC3--7MRpuKMko10S7bxL8H3QcGko1b/view?usp=sharing'> Click to watch </a>
 
 ## 🤓 Author(s)
 **Cindy dev**
